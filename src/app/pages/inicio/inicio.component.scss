@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container_title {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 200px;
+    width: 545px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -20%);
+}
+
+.container_pokebola-close {
+    background-image: url(https://freepngimg.com/download/pokemon/37458-9-pokeball-transparent.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 224px;
+    width: 206px;
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    transform: translate(-50%, -62%);
+    cursor: pointer;
+}
+
+.container_pokebola-open {
+    background-image: url(https://cdn.pixabay.com/photo/2019/11/18/15/46/pokemon-4635112_640.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 224px;
+    width: 178px;
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    transform: translate(-50%, -62%);
+    cursor: pointer;
+}
+
+.container_pokebola-texto {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Shadows Into Light', cursive;
+    transform: translate(-50%, -62%);
+}
+
+.contaniner_modal {
+    text-align: center;
+    margin-top: 146px;
+    opacity: 0.9;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.contaniner_modal svg {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 95%;
+    top: 10%;
+    cursor: pointer;
+}
+
+.contaniner_modal img {
+    height: 200px;
+    width: 200px;
+}
+
+.contaniner_modal-descripcion {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contaniner_modal-descripcion p {
+    text-align: justify;
+    padding: 50px;
+}
+
+.contaniner_modal-descripcion button {
+    width: 13%;
+    margin: 0 auto;
+    height: 32px;
+    border-radius: 6px;
+    border: navajowhite;
+    background-color: #306a5d;
+    color: #fff;
+}
