@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-inicio',
@@ -7,8 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
-
-public closePokebola = false;
+  public closePokebola = false;
   constructor(
     private dialog: MatDialog
   ) { }
@@ -16,18 +16,17 @@ public closePokebola = false;
   ngOnInit(): void {
   }
 
-  public openPokebola(modal: any): void{
+  public openPokebola(): void{
     this.closePokebola = !this.closePokebola;
     if (this.closePokebola){
-      this.dialog.open(modal);
+      this.dialog.open(ModalComponent);
     }else{
       this.dialog.closeAll();
+      this.closePokebola = false;
     }
   }
 
-  public cerrarModal(): void{
-    this.dialog.closeAll();
-    this.closePokebola = false;
-  }
+
+
 
 }

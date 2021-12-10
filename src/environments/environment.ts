@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false
+  API: 'https://pokeapi.co/api/v2/'
 };
 
 /*
