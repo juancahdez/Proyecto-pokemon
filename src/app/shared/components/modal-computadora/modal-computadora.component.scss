@@ -1,0 +1,42 @@
+.container-jugador1 {
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datos p {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.datos p span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tipos {
+    display: flex;
+    flex-direction: column;
+}
+
+.tipos p {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+}
+
+.container-jugador1 svg {
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@ import { ModalDueloComponent } from './components/modal-duelo/modal-duelo.compon
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ModalComponent } from './components/modal/modal.component';
+import { ModalComputadoraComponent } from './components/modal-computadora/modal-computadora.component';
 
 
 
@@ -14,7 +15,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ModalJugador1Component,
     ModalJugador2Component,
     ModalDueloComponent,
-    ModalComponent
+    ModalComponent,
+    ModalComputadoraComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { ModalComponent } from './components/modal/modal.component';
   exports:[
       ModalJugador1Component,
       ModalJugador2Component,
-      ModalDueloComponent
+      ModalDueloComponent,
+      ModalComputadoraComponent
   ]
 })
 export class SharedModule { }

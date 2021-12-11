@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BuscarPokemonService } from 'src/app/core/services/buscar-pokemon.service';
 import { ResponsePokemon, Type } from 'src/app/interfaces/response-pokemon.interface';
+import { ModalComputadoraComponent } from '../modal-computadora/modal-computadora.component';
 import { ModalJugador2Component } from '../modal-jugador2/modal-jugador2.component';
 
 @Component({
@@ -16,7 +17,8 @@ export class ModalJugador1Component implements OnInit {
   public loading: boolean;
   constructor(
     private buscarPokemonSerice: BuscarPokemonService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
@@ -59,7 +61,11 @@ export class ModalJugador1Component implements OnInit {
     };
     localStorage.setItem('jugador1', JSON.stringify(jugador));
     this.dialog.closeAll();
-    this.dialog.open(ModalJugador2Component);
+    if (this.data === 'jugador'){
+      this.dialog.open(ModalJugador2Component);
+    }else{
+      this.dialog.open(ModalComputadoraComponent);
+    }
   }
 
 }

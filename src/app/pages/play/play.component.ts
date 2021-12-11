@@ -19,9 +19,15 @@ export class PlayComponent implements OnInit {
   ngOnInit(): void {
   }
   public duelo1(): void {
-    this.dialog.open(ModalJugador1Component);
+    this.dialog.open(ModalJugador1Component, {
+      data: 'jugador'
+    });
   }
   public duelo2(): void {
+    this.dialog.open(ModalJugador1Component, {
+      data: 'computadora'
+    });
+
   }
 
   public salir(): void{

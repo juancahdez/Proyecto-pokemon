@@ -14,7 +14,7 @@ export class BuscarPokemonService {
   public api = environment.API;
   constructor(private http: HttpClient) { }
 
-  public buscarPokemon(nombre: string): Observable<ResponsePokemon>{
+  public buscarPokemon(nombre: string | number): Observable<ResponsePokemon>{
     return this.http.get<ResponsePokemon>(`${this.api}pokemon/${nombre}`);
   }
 

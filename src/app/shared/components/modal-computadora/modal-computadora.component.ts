@@ -5,27 +5,43 @@ import { ResponsePokemon, Type } from 'src/app/interfaces/response-pokemon.inter
 import { ModalDueloComponent } from '../modal-duelo/modal-duelo.component';
 
 @Component({
-  selector: 'app-modal-jugador2',
-  templateUrl: './modal-jugador2.component.html',
-  styleUrls: ['./modal-jugador2.component.scss']
+  selector: 'app-modal-computadora',
+  templateUrl: './modal-computadora.component.html',
+  styleUrls: ['./modal-computadora.component.scss']
 })
-export class ModalJugador2Component implements OnInit {
+export class ModalComputadoraComponent implements OnInit {
+
   public pokemon: ResponsePokemon[] = [];
   public tipos: Type[] = [];
   public isPokemon = false;
   public loading: boolean;
   constructor(
     private buscarPokemonSerice: BuscarPokemonService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
   }
-  public buscarPokemon(nombre: string): void{
+
+
+
+  public closeModal(): void{
+    this.dialog.closeAll();
+  }
+
+
+  public seleccionPokemon(): void{
+    const id = Math.random() * (500 - 1) + 1;
+    // tslint:disable-next-line:radix
+    const idNumer = parseInt(id.toFixed(0));
+    this.buscarPokemon(idNumer);
+  }
+
+  public buscarPokemon(id: number): void {
     this.pokemon = [];
     this.loading = true;
     this.isPokemon = false;
-    this.buscarPokemonSerice.buscarPokemon(nombre).subscribe((data) => {
+    this.buscarPokemonSerice.buscarPokemon(id).subscribe((data) => {
       if (data){
         this.loading = false;
         this.isPokemon = false;
@@ -33,6 +49,14 @@ export class ModalJugador2Component implements OnInit {
         this.pokemon.map((val) => {
           this.tipos = val.types;
         });
+        const jugador = {
+          pokemon: this.pokemon,
+          jugador: 'Computadora'
+        };
+        localStorage.removeItem('jugador2');
+        localStorage.setItem('Computadora', JSON.stringify(jugador));
+        this.dialog.closeAll();
+        this.dialog.open(ModalDueloComponent);
       }else{
         this.pokemon = [];
         this.isPokemon = true;
@@ -44,22 +68,6 @@ export class ModalJugador2Component implements OnInit {
       this.loading = false;
       console.error(err);
     });
-  }
-
-  public closeModal(): void{
-    this.dialog.closeAll();
-  }
-
-
-  public seleccionPokemon(pokemon: ResponsePokemon[], jugador2: string ): void{
-    const jugador = {
-      pokemon,
-      jugador2
-    };
-    localStorage.setItem('jugador2', JSON.stringify(jugador));
-    localStorage.removeItem('Computadora');
-    this.dialog.closeAll();
-    this.dialog.open(ModalDueloComponent);
   }
 
 }

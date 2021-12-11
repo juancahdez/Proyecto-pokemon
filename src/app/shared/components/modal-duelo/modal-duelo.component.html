@@ -29,6 +29,17 @@
             <ul *ngFor="let type of tiposj2; let i = index">{{i+1}} {{type.type.name}}</ul>
         </nav>
     </div>
+    <div class="jugador2">
+        <p> {{jugadorComputadora}}</p>
+        <div class="pokemon-j2" *ngFor="let j2 of pokemonC">
+            <p>Pokemon: <span>{{j2.name}}</span> </p>
+            <img [src]="j2.sprites.front_shiny" [alt]="j2.name">
+        </div>
+        <nav class="tipos">
+            <p>{{tiposC.length === 1 ? 'tipo' : 'tipos'}}</p>
+            <ul *ngFor="let type of tiposC; let i = index">{{i+1}} {{type.type.name}}</ul>
+        </nav>
+    </div>
 </div>
 <!-- <table class="table">
     <thead>
@@ -65,7 +76,7 @@
     </div>
 </div>
 <div class="boton-luchar">
-    <div class="button btn btn-primary form-control" (click)="luchar(pokemonJ1, pokemonJ2)">
+    <div class="button btn btn-primary form-control" (click)="luchar(pokemonJ1, pokemonJ2, pokemonC)">
         Luchar
     </div>
 </div>
