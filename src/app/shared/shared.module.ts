@@ -21,10 +21,10 @@ import { ModalComponent } from './components/modal/modal.component';
     RouterModule,
     MaterialModule
   ],
-  exports:{
+  exports:[
       ModalJugador1Component,
       ModalJugador2Component,
       ModalDueloComponent
-  }
+  ]
 })
 export class SharedModule { }

@@ -1,4 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ResponsePokemon } from 'src/app/interfaces/response-pokemon.interface';
+import { DamageRelations, ResponseTypes } from 'src/app/interfaces/response-types.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'

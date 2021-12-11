@@ -1,0 +1,49 @@
+.container-duelo {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5em;
+    height: 512px;
+    width: 800px;
+}
+
+.header-modal-duelo p {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.jugador1 p,
+.jugador2 p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tipos p {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pokemon-j1 img {
+    height: 200px;
+    width: 200px;
+}
+
+.pokemon-j2 img {
+    height: 200px;
+    width: 200px;
+}
+
+.versus {
+    margin-top: 153px;
+}
+
+.versus h1 {
+    font-size: 56px;
+    color: red;
+}
+
+.tabla {
+    display: flex;
+    justify-content: space-around;
+}

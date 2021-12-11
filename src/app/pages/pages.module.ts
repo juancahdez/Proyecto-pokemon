@@ -6,6 +6,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { PageErrorComponent } from './page-error/page-error.component';
 import { PlayComponent } from './play/play.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PlayComponent } from './play/play.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialModule
+    MaterialModule,
+        SharedModule
   ]
 })
 export class PagesModule { }

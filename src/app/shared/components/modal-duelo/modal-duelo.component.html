@@ -1,1 +1,71 @@
-<p>modal-duelo works!</p>
+<div class="header-modal-duelo">
+    <p>¡Es hora de luchar!</p>
+</div>
+<br>
+<br>
+<div class="container-duelo">
+    <div class="jugador1">
+        <p>Jugador 1 {{jugador1Nombre}}</p>
+        <div class="pokemon-j1" *ngFor="let j1 of pokemonJ1">
+            <p>Pokemon: <span>{{j1.name}}</span> </p>
+            <img [src]="j1.sprites.front_shiny" [alt]="j1.name">
+        </div>
+        <nav class="tipos">
+            <p>{{tiposj1.length === 1 ? 'tipo' : 'tipos'}}</p>
+            <ul *ngFor="let type of tiposj1; let i = index">{{i+1}} {{type.type.name}}</ul>
+        </nav>
+    </div>
+    <div class="versus">
+        <h1>VS</h1>
+    </div>
+    <div class="jugador2">
+        <p>Jugador 2 {{jugador2Nombre}}</p>
+        <div class="pokemon-j2" *ngFor="let j2 of pokemonJ2">
+            <p>Pokemon: <span>{{j2.name}}</span> </p>
+            <img [src]="j2.sprites.front_shiny" [alt]="j2.name">
+        </div>
+        <nav class="tipos">
+            <p>{{tiposj2.length === 1 ? 'tipo' : 'tipos'}}</p>
+            <ul *ngFor="let type of tiposj2; let i = index">{{i+1}} {{type.type.name}}</ul>
+        </nav>
+    </div>
+</div>
+<!-- <table class="table">
+    <thead>
+        <th>{{this.tipo1}}</th>
+        <th>{{this.tipo2}}</th>
+    </thead>
+    <tbody>
+        <td>{{double_damage_to}}</td>
+        <td>{{half_damage_from}}</td>
+    </tbody>
+    <tbody>
+        <td>{{half_damage_to}}</td>
+        <td>{{double_damage_from}}</td>
+    </tbody>
+</table> -->
+<div class="tabla">
+    <div class="j1">
+        <p>{{double_damage_from}}</p>
+        <p>{{double_damage_to}}</p>
+        <p>{{half_damage_from}}</p>
+        <p>{{half_damage_to}}</p>
+        <p>{{no_damage_from}}</p>
+        <p>{{no_damage_to}}</p>
+        <p>total1: {{total1}}</p>
+    </div>
+    <div class="j2">
+        <p>{{double_damage_to2}}</p>
+        <p>{{half_damage_from2}}</p>
+        <p>{{half_damage_to2}}</p>
+        <p>{{double_damage_from2}}</p>
+        <p>{{no_damage_to2}}</p>
+        <p>{{no_damage_from2}}</p>
+        <p>total2: {{total2}}</p>
+    </div>
+</div>
+<div class="boton-luchar">
+    <div class="button btn btn-primary form-control" (click)="luchar(pokemonJ1, pokemonJ2)">
+        Luchar
+    </div>
+</div>
