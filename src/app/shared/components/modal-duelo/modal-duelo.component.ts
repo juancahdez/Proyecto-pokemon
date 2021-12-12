@@ -75,7 +75,7 @@ export class ModalDueloComponent implements OnInit {
     this.informacionJugador2();
     this.informacionComputadora();
   }
-
+  // Metodo para traer la data del localStorage del jugador 1 y mostrar data en el HTML
   public informacionJugador1(): void{
     this.jugador1 = JSON.parse(localStorage.getItem('jugador1'));
     this.jugador1Nombre = this.jugador1.jugador1;
@@ -84,6 +84,7 @@ export class ModalDueloComponent implements OnInit {
       this.tiposj1 = val.types;
     });
   }
+    // Metodo para traer la data del localStorage del jugador 2 y mostrar data en el HTML
   public informacionJugador2(): void{
     this.jugador2 = JSON.parse(localStorage.getItem('jugador2'));
     if (this.jugador2){
@@ -96,6 +97,7 @@ export class ModalDueloComponent implements OnInit {
       this.informacionComputadora();
     }
   }
+      // Metodo para traer la data del localStorage de la computadora y mostrar data en el HTML
   public informacionComputadora(): void{
     this.computadora = JSON.parse(localStorage.getItem('Computadora'));
     this.jugadorComputadora = this.computadora.jugador;
@@ -105,7 +107,7 @@ export class ModalDueloComponent implements OnInit {
     });
   }
 
-
+  // Metodo para realizar el enfrentamiento entre los jugadores y la computadora segun los tipos de pokemon
   public luchar(pokem1: ResponsePokemon[], pokem2: ResponsePokemon[] , pokemC: ResponsePokemon[]): void{
     pokem1.map((val) => {
       val.types.map((type) => {
@@ -131,7 +133,7 @@ export class ModalDueloComponent implements OnInit {
       });
     }
   }
-
+// Metodo para saber los puntajes de los tipos de Pokemon del jugador 1
   public typesP1(tipo1: string): void{
     this.pokemonService.tipoPokemon(tipo1).subscribe((type) => {
       type.double_damage_from.map((double: Generation) => {
@@ -172,6 +174,7 @@ export class ModalDueloComponent implements OnInit {
       this.total1 = (this.double_damage_from_valor) + (this.double_damage_to_valor) + (this.half_damage_from_valor) + (this.half_damage_to_valor);
     });
   }
+  // Metodo para saber los puntajes de los tipos de Pokemon del jugador 2 o computadora
   public typesP2(tipo2: string): void{
     this.pokemonService.tipoPokemon(tipo2).subscribe((type) => {
       type.double_damage_from.map((double) => {
@@ -213,7 +216,7 @@ export class ModalDueloComponent implements OnInit {
       this.ganador();
     });
   }
-
+  // Metodo para saber quien fue el ganador en el enfrentamiento
   public ganador(): void{
     if (this.pokemonJ2 !== undefined){
       if (this.total1 > this.total2){

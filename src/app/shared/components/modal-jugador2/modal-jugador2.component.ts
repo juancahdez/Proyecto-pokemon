@@ -21,6 +21,8 @@ export class ModalJugador2Component implements OnInit {
 
   ngOnInit(): void {
   }
+    // Metodo para buscar un pokemon dependiendo del parametro que resiva por el input text
+
   public buscarPokemon(nombre: string): void{
     this.pokemon = [];
     this.loading = true;
@@ -45,12 +47,12 @@ export class ModalJugador2Component implements OnInit {
       console.error(err);
     });
   }
-
+  // Metodo para cerrar la modal
   public closeModal(): void{
     this.dialog.closeAll();
   }
 
-
+  // Metodo para seleccionar un pokemon despues de haberlo buscado y guardar la data en el localstorage
   public seleccionPokemon(pokemon: ResponsePokemon[], jugador2: string ): void{
     const jugador = {
       pokemon,

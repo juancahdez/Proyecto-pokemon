@@ -24,19 +24,19 @@ export class ModalComputadoraComponent implements OnInit {
   }
 
 
-
+// Metodo para cerrar la modal
   public closeModal(): void{
     this.dialog.closeAll();
   }
 
-
+// metodo para seleccionar un pokemom por ID de manera aleatoria entre 1 a 500 
   public seleccionPokemon(): void{
     const id = Math.random() * (500 - 1) + 1;
     // tslint:disable-next-line:radix
     const idNumer = parseInt(id.toFixed(0));
     this.buscarPokemon(idNumer);
   }
-
+  // Metodo para buscar un pokemon por id aleatorio 
   public buscarPokemon(id: number): void {
     this.pokemon = [];
     this.loading = true;

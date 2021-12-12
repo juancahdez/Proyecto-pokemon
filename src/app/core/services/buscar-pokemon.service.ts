@@ -14,10 +14,11 @@ export class BuscarPokemonService {
   public api = environment.API;
   constructor(private http: HttpClient) { }
 
+  // metodo para buscar un pokemon de la api https://pokeapi.co/api/v2/pokemon
   public buscarPokemon(nombre: string | number): Observable<ResponsePokemon>{
     return this.http.get<ResponsePokemon>(`${this.api}pokemon/${nombre}`);
   }
-
+  // metodo para buscar un Tipo de pokemon de la api https://pokeapi.co/api/v2/type
   public tipoPokemon(type: string): Observable<DamageRelations>{
     return this.http.get<ResponseTypes>(`${this.api}type/${type}`).pipe
     (map(val => {

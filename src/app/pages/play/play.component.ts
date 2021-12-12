@@ -18,11 +18,14 @@ export class PlayComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // metodo para abrirl la modal del jugador 1 con el duelo contra el jugador2
   public duelo1(): void {
     this.dialog.open(ModalJugador1Component, {
       data: 'jugador'
     });
   }
+    // metodo para abrirl la modal del jugador 1 con el duelo contra la computadora
   public duelo2(): void {
     this.dialog.open(ModalJugador1Component, {
       data: 'computadora'
@@ -30,6 +33,7 @@ export class PlayComponent implements OnInit {
 
   }
 
+  // Metodo para sali a la pantalla inicial
   public salir(): void{
     this.router.navigate([RouterContrains.INICIO]);
   }

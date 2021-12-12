@@ -17,10 +17,11 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+// Metodo para cerrar la modal
   public closeModal(): void{
     this.dialog.closeAll();
   }
+  // Metodo para ir a la pagina de play 
   public empezar(): void{
     this.dialog.closeAll();
     this.router.navigate([RouterContrains.PLAY]);

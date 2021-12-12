@@ -15,7 +15,7 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // Metodo para abrir la pokebola y que salga la modal de Bienvenida
   public openPokebola(): void{
     this.closePokebola = !this.closePokebola;
     if (this.closePokebola){
